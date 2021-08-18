@@ -8,10 +8,7 @@
     Examples: "away" becomes "awayway" and "okay" becomes "okayway."
     Code: pigLatin("away okay elephant")
     Expected Output: "awayway Okayway elephantway"
-    <!-- pigArray.forEach(function(word){
-    if (charAt[0] === "a" || charAt[0] === "e" || charAt[0] === "o" || charAt[0] === "i"|| charAt[0] === "u"){
-    }  
-    }) -->
+
 
 3.
     Test: For words beginning with one or more consonants, move all of the first consecutive consonants to the end and add "ay". Examples: "code" becomes "odecay" and "move" becomes "ovemay."
