@@ -24,28 +24,40 @@ let userInput = "apple";
 function pigLatin(word){
   let vowel = ["a", "e", "i", "o", "u"];
   let vowelIndex = 0;
-  if (vowel.includes(word[0])){
+  let wordNoPunct = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+  word = wordNoPunct;
+  // console.log(wordNoPunct);
+  let wordAr = word.split("");
+  if (vowel.includes(wordAr[0])){
       // If first letter is a vowel
       return word + "way";
-      console.log(word)
+      console.log(word);
     }
-  else{
-    // If the first letter isn't a vowel i.e is a consonant
-      for (let char of word){
-        // Loop through until the first vowel is found
-        if (vowel.includes(char)) {
-        // Store the index at which the first vowel exists
-        vowelIndex = word.indexOf(char);
-        break;
+    else if (word.charAt(0) === "q" && word.charAt(1) === "u"){
+      return word.slice(2) + "quay";
+    }
+    else {
+      for (let i=0; i <= word.length; i++){
+        if (vowel.includes(word.charAt(i))){
+          vowelIndex = i;
+          break;
+        } 
       }
     }
-    // Compose final string
-    return word.slice(vowelIndex) + word.slice(0, vowelIndex) +"ay"
-  }
-}
-  
+          // Compose final string
+    return word.slice(vowelIndex) + word.slice(0, vowelIndex) +"ay";
+    }
 
 
+  //word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+
+// for (i=0;i<= word.length; i++){
+//   if (vowel.includes(word.charAt(i))){
+//     vowelindex = i
+//     break
+//   }  
+//   }
+// }
 
 
 
