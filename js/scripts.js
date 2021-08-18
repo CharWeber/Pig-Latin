@@ -1,30 +1,10 @@
 // Business Logic
 
-let userInput = "apple";
-// function pigLatin(word) {
-//   let firstLetter = word.charAt(0);
-//   if (firstLetter === "e" || firstLetter === "a" || firstLetter === "i" || firstLetter === "o" || firstLetter === "u") {
-//     let pigWord = word.concat("way");
-//     let splitWordAr = pigWord.split("");
-//     splitWordAr.shift();
-//     let newWord = splitWordAr.join("");
-//     // console.log(newWord);
-//   }
-//   else if (firstLetter !== "e" || firstLetter !== "a" || firstLetter !== "i" || firstLetter !== "o" || firstLetter !== "u") {
-    
-//     let splitWordAr = word.split("");
-//     let shiftedLetter = splitWordAr.shift();
-//     splitWordAr.push(shiftedLetter);
-//     let newWord = splitWordAr.join("");
-//     let pigWord = newWord.concat("ay");
-//     console.log(pigWord)
-
-//   }
-// }
 function pigLatin(word){
   let vowel = ["a", "e", "i", "o", "u"];
   let vowelIndex = 0;
-  let wordNoPunct = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+  console.log(word)
+  let wordNoPunct = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").toLowerCase();
   word = wordNoPunct;
   // console.log(wordNoPunct);
   let wordAr = word.split("");
@@ -34,9 +14,10 @@ function pigLatin(word){
       console.log(word);
     }
     else if (word.charAt(0) === "q" && word.charAt(1) === "u"){
+      // if first 2 letters are qu
       return word.slice(2) + "quay";
     }
-    else {
+    else { // if first letter is constanent
       for (let i=0; i <= word.length; i++){
         if (vowel.includes(word.charAt(i))){
           vowelIndex = i;
@@ -59,7 +40,7 @@ function pigLatin(word){
 //   }
 // }
 
-
+// var.replace(/[^0-9a-z]/gi, "").toLowerCase(); 
 
 
 
